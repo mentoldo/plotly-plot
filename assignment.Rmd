@@ -1,0 +1,23 @@
+---
+title: "Plotly Plot"
+author: "Matías A. Alfonso"
+date: "1 de marzo de 2018"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, comment = "NA", message = FALSE)
+```
+
+## Mtcars
+
+```{r plotly, comment = NA}
+library(ggplot2)
+library(plotly)
+
+g <- ggplot(mtcars, aes(x = wt, y = mpg, col = factor(cyl))) +
+    geom_point() +
+    labs(x = "Weight", y = "Miles per Galon", colour = "Cylinders")
+
+ggplotly(g)
+```
